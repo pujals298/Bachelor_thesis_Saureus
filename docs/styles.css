@@ -95,7 +95,6 @@ body {
     color: var(--text);
     background: var(--bg);
     transition: background-color 0.3s ease, color 0.3s ease;
-    overflow-x: hidden;
 }
 
 /* Theme Toggle */
@@ -397,24 +396,15 @@ pre {
     border-radius: 12px;
     overflow-x: auto;
     max-width: 100%;
-    width: 100%;
-    -webkit-overflow-scrolling: touch;
     margin: 15px 0;
     font-size: 0.9rem;
     line-height: 1.5;
 }
 
-pre.scroll-x {
-    display: block;
-}
-
 /* Horizontal scroll container (mobile-friendly) */
 .scroll-x {
     width: 100%;
-    max-width: 100%;
-    display: block;
     overflow-x: auto;
-    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -629,6 +619,7 @@ pre code {
 /* When wrapped with .scroll-x, keep table readable and scrollable */
 .scroll-x .tools-table {
     width: 100%;
+    min-width: 820px;
     table-layout: fixed;
 }
 
@@ -636,32 +627,33 @@ pre code {
 .scroll-x .tools-table td {
     white-space: normal;
     overflow-wrap: anywhere;
-    word-break: break-word;
 }
 
 .scroll-x .tools-table th:nth-child(1),
-.scroll-x .tools-table td:nth-child(1) { width: 18%; }
+.scroll-x .tools-table td:nth-child(1) {
+    width: 130px;
+}
 
 .scroll-x .tools-table th:nth-child(2),
-.scroll-x .tools-table td:nth-child(2) { width: 22%; }
+.scroll-x .tools-table td:nth-child(2) {
+    width: 210px;
+}
 
 .scroll-x .tools-table th:nth-child(3),
-.scroll-x .tools-table td:nth-child(3) { width: 30%; }
+.scroll-x .tools-table td:nth-child(3) {
+    width: 240px;
+}
 
 .scroll-x .tools-table th:nth-child(4),
-.scroll-x .tools-table td:nth-child(4) { width: 30%; }
+.scroll-x .tools-table td:nth-child(4) {
+    width: 240px;
+}
 
 .tools-table th,
 .tools-table td {
     padding: 15px 20px;
     text-align: left;
     border-bottom: 1px solid var(--border);
-}
-
-.tools-table td code,
-.tools-table td a {
-    overflow-wrap: anywhere;
-    word-break: break-word;
 }
 
 .tools-table th {
@@ -769,13 +761,6 @@ pre code {
         width: 40px;
         height: 40px;
         border-radius: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .tools-table th,
-    .tools-table td {
-        padding: 12px 12px;
     }
 }
 
