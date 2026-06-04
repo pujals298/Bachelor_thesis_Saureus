@@ -400,6 +400,13 @@ pre {
     line-height: 1.5;
 }
 
+/* Horizontal scroll container (mobile-friendly) */
+.scroll-x {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 pre code {
     background: none;
     padding: 0;
@@ -559,6 +566,8 @@ pre code {
 
 .step-content {
     flex: 1;
+    /* Allow long content (e.g. code blocks) to shrink and scroll instead of overflowing the viewport */
+    min-width: 0;
 }
 
 .step-content h4 {
@@ -604,6 +613,17 @@ pre code {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 20px var(--shadow);
+}
+
+/* When wrapped with .scroll-x, keep table readable and scrollable */
+.scroll-x .tools-table {
+    width: max-content;
+    min-width: 100%;
+}
+
+.scroll-x .tools-table th,
+.scroll-x .tools-table td {
+    white-space: nowrap;
 }
 
 .tools-table th,
@@ -707,6 +727,17 @@ pre code {
 
     .pipeline-arrow {
         transform: rotate(90deg);
+    }
+
+    .start-step {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
     }
 }
 
