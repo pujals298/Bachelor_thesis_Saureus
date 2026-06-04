@@ -395,6 +395,7 @@ pre {
     padding: 20px;
     border-radius: 12px;
     overflow-x: auto;
+    max-width: 100%;
     margin: 15px 0;
     font-size: 0.9rem;
     line-height: 1.5;
@@ -617,13 +618,35 @@ pre code {
 
 /* When wrapped with .scroll-x, keep table readable and scrollable */
 .scroll-x .tools-table {
-    width: max-content;
-    min-width: 100%;
+    width: 100%;
+    min-width: 820px;
+    table-layout: fixed;
 }
 
 .scroll-x .tools-table th,
 .scroll-x .tools-table td {
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.scroll-x .tools-table th:nth-child(1),
+.scroll-x .tools-table td:nth-child(1) {
+    width: 130px;
+}
+
+.scroll-x .tools-table th:nth-child(2),
+.scroll-x .tools-table td:nth-child(2) {
+    width: 210px;
+}
+
+.scroll-x .tools-table th:nth-child(3),
+.scroll-x .tools-table td:nth-child(3) {
+    width: 240px;
+}
+
+.scroll-x .tools-table th:nth-child(4),
+.scroll-x .tools-table td:nth-child(4) {
+    width: 240px;
 }
 
 .tools-table th,
